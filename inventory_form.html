@@ -2,251 +2,399 @@
 <html>
 <head>
   <title>Unit Inventory Form</title>
+  <!-- Responsive Meta Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Include necessary stylesheets -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <style>
+  <link rel="stylesheet" href="https://cdn.jotform.com/stylebuilder/static/form-common.css?v=3e4c173" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/themes/CSS/defaultV2.css?v=3e4c173" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/themes/CSS/548b1325700cc48d318b4567.css?v=3.3.57195&themeRevisionID=64ff099762313412041c01ae" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/css/styles/payment/payment_styles.css?3.3.57195" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/css/styles/payment/payment_feature.css?3.3.57195" />
+  <link id="custom-font" type="text/css" rel="stylesheet" href="//cdn.jotform.com/fonts/?family=Inter" />
+  <!-- Custom Styles -->
+  <style type="text/css">
     /* Custom CSS */
-    body {
-      font-family: Arial, sans-serif;
+    .form-all {
+      font-family: Inter, sans-serif;
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .form-label.form-label-auto {
+      display: block;
+      float: none;
+      text-align: left;
+      width: 100%;
+    }
+    .supernova {
       background-color: #f3f3fe;
-      margin: 0;
-      padding: 20px;
     }
     .form-all {
-      max-width: 750px;
-      margin: 0 auto;
       background-color: #ffffff;
+      color: #2c3344;
+      font-size: 16px;
       padding: 20px;
-      border-radius: 8px;
+      box-sizing: border-box;
     }
-    .form-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .form-line {
-      margin-bottom: 20px;
-    }
-    .form-label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
+    .form-header-group .form-header,
+    .form-header-group .form-subHeader {
       color: #2c3344;
     }
-    .form-required {
-      color: red;
+    .form-sub-label {
+      color: #464d5e;
     }
     .form-textbox,
-    .form-dropdown {
+    .form-textarea,
+    .form-dropdown,
+    .form-radio-other-input,
+    .form-checkbox-other-input,
+    .form-captcha input,
+    .form-spinner input {
+      background-color: #ffffff;
       width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .form-line-error {
+      background-color: #ffd6d6;
+    }
+    .form-line-error .form-error-message {
+      background-color: #DC2626;
+    }
+    .form-line-error input:not(#coupon-input),
+    .form-line-error textarea,
+    .form-line-error .form-validation-error {
+      border: 1px solid #c61515;
+      box-shadow: 0 0 3px #c61515;
     }
     .form-matrix-table {
       width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
+      max-width: 100%;
+      overflow-x: auto;
+      display: block;
     }
-    .form-matrix-table th,
-    .form-matrix-table td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
+    .form-buttons-wrapper {
+      text-align: center;
     }
-    .form-submit-button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      width: 100%;
-    }
-    .form-submit-button:hover {
-      background-color: #45a049;
-    }
-    .form-sub-label {
-      font-size: 12px;
-      color: #464d5e;
-    }
-    /* Responsive Styles */
     @media screen and (max-width: 600px) {
       .form-all {
-        padding: 15px;
-      }
-      .form-header {
-        font-size: 24px;
+        padding: 10px;
       }
       .form-label {
         font-size: 14px;
       }
-      .form-textbox,
-      .form-dropdown {
-        padding: 6px;
+      .form-header {
+        font-size: 24px;
       }
       .form-matrix-table th,
       .form-matrix-table td {
-        padding: 6px;
+        font-size: 12px;
+        padding: 5px;
       }
       .form-submit-button {
+        width: 100%;
+        font-size: 16px;
         padding: 10px;
-        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Your Form Starts Here -->
-  <form action="https://submit.jotform.com/submit/242692850322961" method="post" id="unit_inventory_form" accept-charset="utf-8" autocomplete="on">
-    <!-- Hidden Inputs -->
-    <input type="hidden" name="formID" value="242692850322961" />
-    <input type="hidden" name="simple_spc" value="242692850322961-242692850322961" />
-    <!-- Form Content -->
-    <div class="form-all">
-      <h1 class="form-header">Unit Inventory</h1>
-
-      <!-- Date Field -->
-      <div class="form-line">
-        <label class="form-label" for="date_field">Date<span class="form-required">*</span></label>
-        <input type="text" id="date_field" name="q3_date" class="form-textbox" required placeholder="MM-DD-YYYY" />
-      </div>
-
-      <!-- City Field -->
-      <div class="form-line">
-        <label class="form-label" for="city_field">City<span class="form-required">*</span></label>
-        <select id="city_field" name="q5_city" class="form-dropdown" required>
-          <option value="">Please Select</option>
-          <option value="SF">SF</option>
-          <option value="LA">LA</option>
-          <option value="CHI">CHI</option>
-          <option value="MIA">MIA</option>
-          <option value="LSV">LSV</option>
-          <option value="DAL">DAL</option>
-          <option value="ATX">ATX</option>
-        </select>
-      </div>
-
-      <!-- Inventory Audit Field -->
-      <div class="form-line">
-        <label class="form-label">Inventory Audit<span class="form-required">*</span></label>
-        <table class="form-matrix-table">
-          <tr>
-            <th>Item</th>
-            <th>Previous Count</th>
-            <th>New Count</th>
-          </tr>
-          <!-- Row 1 -->
-          <tr>
-            <td>InStock-Operational Screens</td>
-            <td><input type="number" id="prev_count_0" name="q6_inventoryAudit[0][0]" readonly /></td>
-            <td><input type="number" id="new_count_0" name="q6_inventoryAudit[0][1]" required /></td>
-          </tr>
-          <!-- Row 2 -->
-          <tr>
-            <td>InStock-Non Operational Repairable</td>
-            <td><input type="number" id="prev_count_1" name="q6_inventoryAudit[1][0]" readonly /></td>
-            <td><input type="number" id="new_count_1" name="q6_inventoryAudit[1][1]" required /></td>
-          </tr>
-          <!-- Row 3 -->
-          <tr>
-            <td>InStock-Permanently Non Op</td>
-            <td><input type="number" id="prev_count_2" name="q6_inventoryAudit[2][0]" readonly /></td>
-            <td><input type="number" id="new_count_2" name="q6_inventoryAudit[2][1]" required /></td>
-          </tr>
-          <!-- Row 4 -->
-          <tr>
-            <td>LED Panels</td>
-            <td><input type="number" id="prev_count_3" name="q6_inventoryAudit[3][0]" readonly /></td>
-            <td><input type="number" id="new_count_3" name="q6_inventoryAudit[3][1]" required /></td>
-          </tr>
-          <!-- Row 5 -->
-          <tr>
-            <td>E62 NA Boards</td>
-            <td><input type="number" id="prev_count_4" name="q6_inventoryAudit[4][0]" readonly /></td>
-            <td><input type="number" id="new_count_4" name="q6_inventoryAudit[4][1]" required /></td>
-          </tr>
-          <!-- Row 6 -->
-          <tr>
-            <td>E62 EU Boards</td>
-            <td><input type="number" id="prev_count_5" name="q6_inventoryAudit[5][0]" readonly /></td>
-            <td><input type="number" id="new_count_5" name="q6_inventoryAudit[5][1]" required /></td>
-          </tr>
-          <!-- Row 7 -->
-          <tr>
-            <td>L20 Boards</td>
-            <td><input type="number" id="prev_count_6" name="q6_inventoryAudit[6][0]" readonly /></td>
-            <td><input type="number" id="new_count_6" name="q6_inventoryAudit[6][1]" required /></td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="form-line">
-        <button type="submit" class="form-submit-button">Submit</button>
-      </div>
-    </div>
-  </form>
-
   <!-- Include necessary scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
-    // Initialize the date picker
-    flatpickr("#date_field", {
-      dateFormat: "m-d-Y",
-      allowInput: true
-    });
-
-    // Function to handle data from the API
-    function handleData(data) {
-      if (data.error) {
-        alert(data.error);
-      } else {
-        // Populate the form fields with the data
-        document.getElementById('prev_count_0').value = data.op_screens;
-        document.getElementById('prev_count_1').value = data.non_op_repairable;
-        document.getElementById('prev_count_2').value = data.non_op_permanent;
-        document.getElementById('prev_count_3').value = data.led_panels;
-        document.getElementById('prev_count_4').value = data.e62_na_boards;
-        document.getElementById('prev_count_5').value = data.e62_eu_boards;
-        document.getElementById('prev_count_6').value = data.l20_boards;
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var citySelect = document.getElementById('city_field');
-
-      citySelect.addEventListener('change', function() {
-        var selectedCity = citySelect.value;
-        if (selectedCity) {
-          fetchData(selectedCity);
-        } else {
-          // Clear the fields if no city is selected
-          for (var i = 0; i <= 6; i++) {
-            document.getElementById('prev_count_' + i).value = '';
-          }
-        }
+  <script src="https://cdn.jotform.com/js/vendor/jquery-3.7.1.min.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/static/prototype.forms.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/static/jotform.forms.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/js/calendarview.js?3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/js/calendarDatepicker.js?3.3.57195" type="text/javascript"></script>
+  <script type="text/javascript">
+    JotForm.newDefaultTheme = false;
+    JotForm.extendsNewTheme = true;
+    JotForm.singleProduct = false;
+    JotForm.newPaymentUIForNewCreatedForms = false;
+    JotForm.newPaymentUI = true;
+    JotForm.useJotformSign = "Yes";
+    JotForm.originalLanguage = "en";
+    JotForm.isFullSource = true;
+    JotForm.init(function () {
+      /* Initialization code */
+      JotForm.calendarMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      JotForm.calendarDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      JotForm.setCalendar("3", false, {
+        "days": {
+          "monday": true,
+          "tuesday": true,
+          "wednesday": true,
+          "thursday": true,
+          "friday": true,
+          "saturday": true,
+          "sunday": true
+        },
+        "future": true,
+        "past": true,
+        "custom": false,
+        "ranges": false,
+        "start": "",
+        "end": "",
+        "countSelectedDaysOnly": false
       });
-
-      // Function to fetch data using JSONP
-      function fetchData(city) {
-        var callbackName = 'handleData';
-
-        // Remove existing script tag if it exists
-        var existingScript = document.getElementById('jsonpScript');
-        if (existingScript) {
-          existingScript.parentNode.removeChild(existingScript);
-        }
-
-        // Create a script tag
-        var script = document.createElement('script');
-        script.id = 'jsonpScript';
-        script.src = 'https://script.google.com/macros/s/AKfycbx20PuMO0yGppFAWkrCvNinFDDdfKRNyGPbaT58l5H_yyuomHSBK3DRxtLilnYAQxPerw/exec?city=' + encodeURIComponent(city) + '&callback=' + callbackName;
-
-        // Append the script tag to the document
-        document.body.appendChild(script);
-      }
     });
   </script>
+  <!-- Your JotForm Form Starts Here -->
+  <form action="https://submit.jotform.com/submit/242692850322961" method="post" name="form_242692850322961" id="242692850322961" accept-charset="utf-8" autocomplete="on">
+    <!-- Hidden Inputs -->
+    <input type="hidden" name="formID" value="242692850322961" />
+    <input type="hidden" id="JWTContainer" value="" />
+    <input type="hidden" id="cardinalOrderNumber" value="" />
+    <input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker" value="build-date-1727361429049" />
+    <input type="hidden" id="submitSource" name="submitSource" value="unknown" />
+    <input type="hidden" id="buildDate" name="buildDate" value="1727361429049" />
+    <input type="hidden" name="website" value="" />
+    <input type="hidden" name="simple_spc" id="simple_spc" value="242692850322961-242692850322961" />
+    <input type="hidden" name="uploadServerUrl" value="https://upload.jotform.com/upload" />
+
+    <!-- Form Content -->
+    <div role="main" class="form-all">
+      <ul class="form-section page-section">
+
+        <!-- Header -->
+        <li id="cid_1" class="form-input-wide" data-type="control_head">
+          <div class="form-header-group header-large">
+            <div class="header-text httal htvam">
+              <h1 id="header_1" class="form-header" data-component="header">Unit Inventory</h1>
+            </div>
+          </div>
+        </li>
+
+        <!-- Date Field -->
+        <li class="form-line jf-required" data-type="control_datetime" id="id_3">
+          <label class="form-label form-label-top form-label-auto" id="label_3" for="lite_mode_3">Date<span class="form-required">*</span></label>
+          <div id="cid_3" class="form-input-wide jf-required" data-layout="half">
+            <!-- Date Picker -->
+            <div data-wrapper-react="true">
+              <!-- Hidden date inputs for non-lite mode -->
+              <div style="display:none">
+                <!-- These inputs are required for JotForm to process the date correctly -->
+                <input type="hidden" name="q3_date[month]" id="month_3" />
+                <input type="hidden" name="q3_date[day]" id="day_3" />
+                <input type="hidden" name="q3_date[year]" id="year_3" />
+              </div>
+              <!-- Lite mode date picker -->
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_3" name="q3_date" size="12" data-maxlength="12" maxlength="12" data-age="" required="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autocomplete="off" aria-labelledby="label_3 sublabel_3_litemode" />
+                <img class="newDefaultTheme-dateIcon icon-liteMode" alt="Select Date" id="input_3_pick" src="https://cdn.jotform.com/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                <label class="form-sub-label" for="lite_mode_3" id="sublabel_3_litemode" style="min-height:13px">Date</label>
+              </span>
+            </div>
+          </div>
+        </li>
+
+        <!-- City Field -->
+        <li class="form-line jf-required" data-type="control_dropdown" id="id_5">
+          <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5">City<span class="form-required">*</span></label>
+          <div id="cid_5" class="form-input-wide jf-required" data-layout="half">
+            <select class="form-dropdown validate[required]" id="input_5" name="q5_city" data-component="dropdown" required="" aria-label="City">
+              <option value="">Please Select</option>
+              <option value="SF">SF</option>
+              <option value="LA">LA</option>
+              <option value="CHI">CHI</option>
+              <option value="MIA">MIA</option>
+              <option value="LSV">LSV</option>
+              <option value="DAL">DAL</option>
+              <option value="ATX">ATX</option>
+            </select>
+          </div>
+        </li>
+
+        <!-- Inventory Audit Field -->
+        <li class="form-line jf-required" data-type="control_matrix" id="id_6">
+          <label class="form-label form-label-top" id="label_6">Inventory Audit<span class="form-required">*</span></label>
+          <div id="cid_6" class="form-input-wide jf-required" data-layout="full">
+            <table class="form-matrix-table" data-component="matrix">
+              <tr class="form-matrix-tr form-matrix-header-tr">
+                <th class="form-matrix-th"></th>
+                <th class="form-matrix-headers">Previous Count</th>
+                <th class="form-matrix-headers">New Count</th>
+              </tr>
+              <!-- Row 1 -->
+              <tr class="form-matrix-tr form-matrix-value-tr">
+                <th scope="row" class="form-matrix-headers">
+                  <label for="input_6_0_1">InStock-Operational Screens</label>
+                </th>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_0_0" name="q6_inventoryAudit[0][0]" readonly />
+                </td>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_0_1" name="q6_inventoryAudit[0][1]" required />
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr class="form-matrix-tr form-matrix-value-tr">
+                <th scope="row" class="form-matrix-headers">
+                  <label for="input_6_1_1">InStock-Non Operational Repairable</label>
+                </th>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_1_0" name="q6_inventoryAudit[1][0]" readonly />
+                </td>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_1_1" name="q6_inventoryAudit[1][1]" required />
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr class="form-matrix-tr form-matrix-value-tr">
+                <th scope="row" class="form-matrix-headers">
+                  <label for="input_6_2_1">InStock-Permanently Non Op</label>
+                </th>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_2_0" name="q6_inventoryAudit[2][0]" readonly />
+                </td>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_2_1" name="q6_inventoryAudit[2][1]" required />
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr class="form-matrix-tr form-matrix-value-tr">
+                <th scope="row" class="form-matrix-headers">
+                  <label for="input_6_3_1">LED Panels</label>
+                </th>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_3_0" name="q6_inventoryAudit[3][0]" readonly />
+                </td>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_3_1" name="q6_inventoryAudit[3][1]" required />
+                </td>
+              </tr>
+              <!-- Row 5 -->
+              <tr class="form-matrix-tr form-matrix-value-tr">
+                <th scope="row" class="form-matrix-headers">
+                  <label for="input_6_4_1">E62 NA Boards</label>
+                </th>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_4_0" name="q6_inventoryAudit[4][0]" readonly />
+                </td>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_4_1" name="q6_inventoryAudit[4][1]" required />
+                </td>
+              </tr>
+              <!-- Row 6 -->
+              <tr class="form-matrix-tr form-matrix-value-tr">
+                <th scope="row" class="form-matrix-headers">
+                  <label for="input_6_5_1">E62 EU Boards</label>
+                </th>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_5_0" name="q6_inventoryAudit[5][0]" readonly />
+                </td>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_5_1" name="q6_inventoryAudit[5][1]" required />
+                </td>
+              </tr>
+              <!-- Row 7 -->
+              <tr class="form-matrix-tr form-matrix-value-tr">
+                <th scope="row" class="form-matrix-headers">
+                  <label for="input_6_6_1">L20 Boards</label>
+                </th>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_6_0" name="q6_inventoryAudit[6][0]" readonly />
+                </td>
+                <td class="form-matrix-values">
+                  <input type="number" id="input_6_6_1" name="q6_inventoryAudit[6][1]" required />
+                </td>
+              </tr>
+            </table>
+          </div>
+        </li>
+
+        <!-- Submit Button -->
+        <li class="form-line" data-type="control_button" id="id_2">
+          <div id="cid_2" class="form-input-wide" data-layout="full">
+            <div class="form-buttons-wrapper form-buttons-auto">
+              <button id="input_2" type="submit" class="form-submit-button" data-component="button">Submit</button>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- JavaScript to fetch and populate data -->
+    <script>
+      // Callback function must be in global scope
+      function handleData(data) {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          // Populate the form fields with the data
+          document.querySelector('#input_6_0_0').value = data.op_screens;
+          document.querySelector('#input_6_1_0').value = data.non_op_repairable;
+          document.querySelector('#input_6_2_0').value = data.non_op_permanent;
+          document.querySelector('#input_6_3_0').value = data.led_panels;
+          document.querySelector('#input_6_4_0').value = data.e62_na_boards;
+          document.querySelector('#input_6_5_0').value = data.e62_eu_boards;
+          document.querySelector('#input_6_6_0').value = data.l20_boards;
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var citySelect = document.querySelector('#input_5');
+
+        citySelect.addEventListener('change', function() {
+          var selectedCity = citySelect.value;
+          if (selectedCity) {
+            fetchData(selectedCity);
+          } else {
+            // Clear the fields if no city is selected
+            document.querySelector('#input_6_0_0').value = '';
+            document.querySelector('#input_6_1_0').value = '';
+            document.querySelector('#input_6_2_0').value = '';
+            document.querySelector('#input_6_3_0').value = '';
+            document.querySelector('#input_6_4_0').value = '';
+            document.querySelector('#input_6_5_0').value = '';
+            document.querySelector('#input_6_6_0').value = '';
+          }
+        });
+
+        // Function to fetch data using JSONP
+        function fetchData(city) {
+          var callbackName = 'handleData';
+
+          // Remove existing script tag if it exists
+          var existingScript = document.getElementById('jsonpScript');
+          if (existingScript) {
+            existingScript.parentNode.removeChild(existingScript);
+          }
+
+          // Create a script tag
+          var script = document.createElement('script');
+          script.id = 'jsonpScript';
+          script.src = 'https://script.google.com/macros/s/AKfycbx20PuMO0yGppFAWkrCvNinFDDdfKRNyGPbaT58l5H_yyuomHSBK3DRxtLilnYAQxPerw/exec?city=' + encodeURIComponent(city) + '&callback=' + callbackName;
+
+          // Append the script tag to the document
+          document.body.appendChild(script);
+        }
+
+        // Handle date input for submission
+        var dateInput = document.getElementById('lite_mode_3');
+        dateInput.addEventListener('change', function() {
+          var dateValue = dateInput.value;
+          var dateParts = dateValue.split('-');
+          if (dateParts.length === 3) {
+            document.getElementById('month_3').value = dateParts[0];
+            document.getElementById('day_3').value = dateParts[1];
+            document.getElementById('year_3').value = dateParts[2];
+          }
+        });
+
+        // Fix for JotForm date validation
+        dateInput.addEventListener('blur', function() {
+          var dateValue = this.value;
+          var dateParts = dateValue.split('-');
+          if (dateParts.length === 3) {
+            document.getElementById('month_3').value = dateParts[0];
+            document.getElementById('day_3').value = dateParts[1];
+            document.getElementById('year_3').value = dateParts[2];
+          }
+        });
+
+      });
+    </script>
+  </form>
 </body>
 </html>
