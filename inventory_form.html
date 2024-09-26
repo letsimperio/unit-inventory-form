@@ -3,26 +3,17 @@
 <head>
   <title>Unit Inventory Form</title>
   <!-- Include necessary stylesheets -->
-  <!-- Corrected Stylesheet Links -->
-  <link rel="stylesheet" href="https://cdn.jotfor.ms/stylebuilder/static/form-common.css?v=3e4c173" />
-  <link rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/defaultV2.css?v=3e4c173" />
-  <link rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/548b1325700cc48d318b4567.css?v=3.3.57195&themeRevisionID=64ff099762313412041c01ae" />
-  <link rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_styles.css?3.3.57195" />
-  <link rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_feature.css?3.3.57195" />
-  <link id="custom-font" type="text/css" rel="stylesheet" href="//cdn.jotfor.ms/fonts/?family=Inter" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/stylebuilder/static/form-common.css?v=3e4c173" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/themes/CSS/defaultV2.css?v=3e4c173" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/themes/CSS/548b1325700cc48d318b4567.css?v=3.3.57195&themeRevisionID=64ff099762313412041c01ae" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/css/styles/payment/payment_styles.css?3.3.57195" />
+  <link rel="stylesheet" href="https://cdn.jotform.com/css/styles/payment/payment_feature.css?3.3.57195" />
+  <link id="custom-font" type="text/css" rel="stylesheet" href="//cdn.jotform.com/fonts/?family=Inter" />
   <!-- Custom Styles -->
   <style type="text/css">
     /* Custom CSS */
     .form-all {
       font-family: Inter, sans-serif;
-    }
-    .form-line {
-      margin-top: 12px;
-      margin-bottom: 12px;
-    }
-    .form-all {
-      max-width: 752px;
-      width: 100%;
     }
     .form-label.form-label-auto {
       display: block;
@@ -70,14 +61,11 @@
 </head>
 <body>
   <!-- Include necessary scripts -->
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jotfor.ms/js/vendor/flashcanvas.js?v=3.3.57195" type="text/javascript"></script>
-  <![endif]-->
-  <script src="https://cdn.jotfor.ms/js/vendor/jquery-3.7.1.min.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn.jotfor.ms/static/prototype.forms.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn.jotfor.ms/static/jotform.forms.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn.jotfor.ms/js/calendarview.js?3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn.jotfor.ms/js/calendarDatepicker.js?3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/js/vendor/jquery-3.7.1.min.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/static/prototype.forms.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/static/jotform.forms.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/js/calendarview.js?3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotform.com/js/calendarDatepicker.js?3.3.57195" type="text/javascript"></script>
   <script type="text/javascript">
     JotForm.newDefaultTheme = false;
     JotForm.extendsNewTheme = true;
@@ -145,25 +133,15 @@
             <div data-wrapper-react="true">
               <!-- Hidden date inputs for non-lite mode -->
               <div style="display:none">
-                <span class="form-sub-label-container" style="vertical-align:top">
-                  <input type="tel" class="form-textbox validate[required, limitDate]" id="month_3" name="q3_date[month]" size="2" data-maxlength="2" data-age="" maxlength="2" required="" autocomplete="off" aria-labelledby="label_3 sublabel_3_month" />
-                  <span class="date-separate" aria-hidden="true"> -</span>
-                  <label class="form-sub-label" for="month_3" id="sublabel_3_month" style="min-height:13px">Month</label>
-                </span>
-                <span class="form-sub-label-container" style="vertical-align:top">
-                  <input type="tel" class="currentDate form-textbox validate[required, limitDate]" id="day_3" name="q3_date[day]" size="2" data-maxlength="2" data-age="" maxlength="2" required="" autocomplete="off" aria-labelledby="label_3 sublabel_3_day" />
-                  <span class="date-separate" aria-hidden="true"> -</span>
-                  <label class="form-sub-label" for="day_3" id="sublabel_3_day" style="min-height:13px">Day</label>
-                </span>
-                <span class="form-sub-label-container" style="vertical-align:top">
-                  <input type="tel" class="form-textbox validate[required, limitDate]" id="year_3" name="q3_date[year]" size="4" data-maxlength="4" data-age="" maxlength="4" required="" autocomplete="off" aria-labelledby="label_3 sublabel_3_year" />
-                  <label class="form-sub-label" for="year_3" id="sublabel_3_year" style="min-height:13px">Year</label>
-                </span>
+                <!-- These inputs are required for JotForm to process the date correctly -->
+                <input type="hidden" name="q3_date[month]" id="month_3" />
+                <input type="hidden" name="q3_date[day]" id="day_3" />
+                <input type="hidden" name="q3_date[year]" id="year_3" />
               </div>
               <!-- Lite mode date picker -->
               <span class="form-sub-label-container" style="vertical-align:top">
                 <input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_3" name="q3_date" size="12" data-maxlength="12" maxlength="12" data-age="" required="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autocomplete="off" aria-labelledby="label_3 sublabel_3_litemode" />
-                <img class="newDefaultTheme-dateIcon icon-liteMode" alt="Select Date" id="input_3_pick" src="https://cdn.jotform.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                <img class="newDefaultTheme-dateIcon icon-liteMode" alt="Select Date" id="input_3_pick" src="https://cdn.jotform.com/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
                 <label class="form-sub-label" for="lite_mode_3" id="sublabel_3_litemode" style="min-height:13px">Date</label>
               </span>
             </div>
@@ -206,7 +184,7 @@
                   <input type="number" id="input_6_0_0" name="q6_inventoryAudit[0][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_0_1" name="q6_inventoryAudit[0][1]" />
+                  <input type="number" id="input_6_0_1" name="q6_inventoryAudit[0][1]" required />
                 </td>
               </tr>
               <!-- Row 2 -->
@@ -218,7 +196,7 @@
                   <input type="number" id="input_6_1_0" name="q6_inventoryAudit[1][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_1_1" name="q6_inventoryAudit[1][1]" />
+                  <input type="number" id="input_6_1_1" name="q6_inventoryAudit[1][1]" required />
                 </td>
               </tr>
               <!-- Row 3 -->
@@ -230,7 +208,7 @@
                   <input type="number" id="input_6_2_0" name="q6_inventoryAudit[2][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_2_1" name="q6_inventoryAudit[2][1]" />
+                  <input type="number" id="input_6_2_1" name="q6_inventoryAudit[2][1]" required />
                 </td>
               </tr>
               <!-- Row 4 -->
@@ -242,7 +220,7 @@
                   <input type="number" id="input_6_3_0" name="q6_inventoryAudit[3][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_3_1" name="q6_inventoryAudit[3][1]" />
+                  <input type="number" id="input_6_3_1" name="q6_inventoryAudit[3][1]" required />
                 </td>
               </tr>
               <!-- Row 5 -->
@@ -254,7 +232,7 @@
                   <input type="number" id="input_6_4_0" name="q6_inventoryAudit[4][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_4_1" name="q6_inventoryAudit[4][1]" />
+                  <input type="number" id="input_6_4_1" name="q6_inventoryAudit[4][1]" required />
                 </td>
               </tr>
               <!-- Row 6 -->
@@ -266,7 +244,7 @@
                   <input type="number" id="input_6_5_0" name="q6_inventoryAudit[5][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_5_1" name="q6_inventoryAudit[5][1]" />
+                  <input type="number" id="input_6_5_1" name="q6_inventoryAudit[5][1]" required />
                 </td>
               </tr>
               <!-- Row 7 -->
@@ -278,7 +256,7 @@
                   <input type="number" id="input_6_6_0" name="q6_inventoryAudit[6][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_6_1" name="q6_inventoryAudit[6][1]" />
+                  <input type="number" id="input_6_6_1" name="q6_inventoryAudit[6][1]" required />
                 </td>
               </tr>
             </table>
@@ -352,6 +330,19 @@
           // Append the script tag to the document
           document.body.appendChild(script);
         }
+
+        // Handle date input for submission
+        var dateInput = document.getElementById('lite_mode_3');
+        dateInput.addEventListener('change', function() {
+          var dateValue = dateInput.value;
+          var dateParts = dateValue.split('-');
+          if (dateParts.length === 3) {
+            document.getElementById('month_3').value = dateParts[0];
+            document.getElementById('day_3').value = dateParts[1];
+            document.getElementById('year_3').value = dateParts[2];
+          }
+        });
+
       });
     </script>
   </form>
