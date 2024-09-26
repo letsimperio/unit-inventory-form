@@ -2,82 +2,49 @@
 <html>
 <head>
   <title>Unit Inventory Form</title>
+  <!-- Include necessary stylesheets -->
   <!-- Corrected Stylesheet Links -->
-  <link rel="stylesheet" href="https://cdn02.jotfor.ms/stylebuilder/static/form-common.css?v=3e4c173" />
-  <link rel="stylesheet" href="https://cdn03.jotfor.ms/themes/CSS/defaultV2.css?v=3e4c173" />
-  <link rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/548b1325700cc48d318b4567.css?v=3.3.57195&themeRevisionID=64ff099762313412041c01ae"/>
-  <link rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.57195" />
-  <link rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.57195" />
-  <style type="text/css">@media print{*{-webkit-print-color-adjust: exact !important;color-adjust: exact !important;}.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+  <link rel="stylesheet" href="https://cdn.jotfor.ms/stylebuilder/static/form-common.css?v=3e4c173" />
+  <link rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/defaultV2.css?v=3e4c173" />
+  <link rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/548b1325700cc48d318b4567.css?v=3.3.57195&themeRevisionID=64ff099762313412041c01ae" />
+  <link rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_styles.css?3.3.57195" />
+  <link rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_feature.css?3.3.57195" />
   <link id="custom-font" type="text/css" rel="stylesheet" href="//cdn.jotfor.ms/fonts/?family=Inter" />
-  <style type="text/css" id="form-designer-style">
-    /* Injected CSS Code */
-    /*PREFERENCES STYLE*/
+  <!-- Custom Styles -->
+  <style type="text/css">
+    /* Custom CSS */
     .form-all {
       font-family: Inter, sans-serif;
     }
-
     .form-line {
       margin-top: 12px;
       margin-bottom: 12px;
     }
-
     .form-all {
       max-width: 752px;
       width: 100%;
     }
-
-    .form-label.form-label-left,
-    .form-label.form-label-right,
-    .form-label.form-label-left.form-label-auto,
-    .form-label.form-label-right.form-label-auto {
-      width: 230px;
+    .form-label.form-label-auto {
+      display: block;
+      float: none;
+      text-align: left;
+      width: 100%;
     }
-
-    .form-all {
-      font-size: 16px
-    }
-
     .supernova {
       background-color: #f3f3fe;
     }
-    .supernova body {
-      background: transparent;
-    }
-
-    .supernova .form-all, .form-all {
-      background-color: #ffffff;
-    }
-
     .form-all {
+      background-color: #ffffff;
       color: #2c3344;
+      font-size: 16px;
     }
-    .form-header-group .form-header {
-      color: #2c3344;
-    }
+    .form-header-group .form-header,
     .form-header-group .form-subHeader {
-      color: #2c3344;
-    }
-    .form-label-top,
-    .form-label-left,
-    .form-label-right,
-    .form-html,
-    .form-checkbox-item label,
-    .form-radio-item label,
-    span.FITB .qb-checkbox-label,
-    span.FITB .qb-radiobox-label,
-    span.FITB .form-radio label,
-    span.FITB .form-checkbox label,
-    [data-blotid][data-type=checkbox] [data-labelid],
-    [data-blotid][data-type=radiobox] [data-labelid],
-    span.FITB-inptCont[data-type=checkbox] label,
-    span.FITB-inptCont[data-type=radiobox] label {
       color: #2c3344;
     }
     .form-sub-label {
       color: #464d5e;
     }
-
     .form-textbox,
     .form-textarea,
     .form-dropdown,
@@ -87,216 +54,66 @@
     .form-spinner input {
       background-color: #ffffff;
     }
-
     .form-line-error {
-      overflow: hidden;
-      transition: none;
       background-color: #ffd6d6;
     }
-
     .form-line-error .form-error-message {
       background-color: #DC2626;
-      clear: both;
-      float: none;
     }
-
-    .form-line-error .form-error-arrow {
-      border-bottom-color: #FF3200;
-    }
-
     .form-line-error input:not(#coupon-input),
     .form-line-error textarea,
     .form-line-error .form-validation-error {
       border: 1px solid #c61515;
       box-shadow: 0 0 3px #c61515;
     }
-
-    .supernova {
-      background-repeat: no-repeat;
-      background-size:cover;
-      background-attachment: fixed;
-      background-position: center top;
-    }
-
-    .supernova, #stage {
-      background-image: none;
-    }
-
-    .form-all {
-      background-image: none;
-    }
-    /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
-    .form-label.form-label-auto {
-      display: block;
-      float: none;
-      text-align: left;
-      width: 100%;
-    }
-    /* Injected CSS Code */
   </style>
 </head>
 <body>
+  <!-- Include necessary scripts -->
   <!--[if lt IE 9]>
-  <script src="https://cdn01.jotfor.ms/js/vendor/flashcanvas.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotfor.ms/js/vendor/flashcanvas.js?v=3.3.57195" type="text/javascript"></script>
   <![endif]-->
-  <script src="https://cdn02.jotfor.ms/js/vendor/jquery-3.7.1.min.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn03.jotfor.ms/js/vendor/jSignature/jSignature.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn01.jotfor.ms/js/vendor/jSignature/jSignature.CompressorBase30.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn02.jotfor.ms/js/vendor/jSignature/jSignature.CompressorSVG.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn03.jotfor.ms/js/vendor/jSignature/jSignature.UndoButton.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn01.jotfor.ms/js/vendor/jotform.signaturepad.new.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn03.jotfor.ms/static/jotform.forms.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn01.jotfor.ms/js/vendor/maskedinput_5.0.9.min.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn01.jotfor.ms/s/umd/4c9f66ecce3/for-sign-form-integration.js?v=3.3.57195" type="text/javascript" defer></script>
-  <script src="https://cdn01.jotfor.ms/s/umd/4c9f66ecce3/for-form-branding-footer.js?v=3.3.57195" type="text/javascript" defer></script>
-  <script src="https://cdn02.jotfor.ms/js/vendor/smoothscroll.min.js?v=3.3.57195" type="text/javascript"></script>
-  <script src="https://cdn03.jotfor.ms/js/errorNavigation.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotfor.ms/js/vendor/jquery-3.7.1.min.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotfor.ms/static/prototype.forms.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotfor.ms/static/jotform.forms.js?v=3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotfor.ms/js/calendarview.js?3.3.57195" type="text/javascript"></script>
+  <script src="https://cdn.jotfor.ms/js/calendarDatepicker.js?3.3.57195" type="text/javascript"></script>
   <script type="text/javascript">
     JotForm.newDefaultTheme = false;
     JotForm.extendsNewTheme = true;
-    JotForm.CDN_VENDOR_PATH = "https://cdn01.jotfor.ms/s/vendor/static";
     JotForm.singleProduct = false;
     JotForm.newPaymentUIForNewCreatedForms = false;
-    JotForm.texts = {
-      "confirmEmail": "E-mail does not match",
-      "pleaseWait": "Please wait...",
-      "validateEmail": "You need to validate this e-mail",
-      "confirmClearForm": "Are you sure you want to clear the form",
-      "lessThan": "Your score should be less than or equal to",
-      "incompleteFields": "There are incomplete required fields. Please complete them.",
-      "required": "This field is required.",
-      "requireOne": "At least one field required.",
-      "requireEveryRow": "Every row is required.",
-      "requireEveryCell": "Every cell is required.",
-      "email": "Enter a valid e-mail address",
-      "alphabetic": "This field can only contain letters",
-      "numeric": "This field can only contain numeric values",
-      "alphanumeric": "This field can only contain letters and numbers.",
-      "cyrillic": "This field can only contain cyrillic characters",
-      "url": "This field can only contain a valid URL",
-      "currency": "This field can only contain currency values.",
-      "fillMask": "Field value must fill mask.",
-      "uploadExtensions": "You can only upload following files:",
-      "noUploadExtensions": "File has no extension file type (e.g. .txt, .png, .jpeg)",
-      "uploadFilesize": "File size cannot be bigger than:",
-      "uploadFilesizemin": "File size cannot be smaller than:",
-      "gradingScoreError": "Score total should only be less than or equal to",
-      "inputCarretErrorA": "Input should not be less than the minimum value:",
-      "inputCarretErrorB": "Input should not be greater than the maximum value:",
-      "maxDigitsError": "The maximum digits allowed is",
-      "minCharactersError": "The number of characters should not be less than the minimum value:",
-      "maxCharactersError": "The number of characters should not be more than the maximum value:",
-      "freeEmailError": "Free email accounts are not allowed",
-      "minSelectionsError": "The minimum required number of selections is ",
-      "maxSelectionsError": "The maximum number of selections allowed is ",
-      "pastDatesDisallowed": "Date must not be in the past.",
-      "dateLimited": "This date is unavailable.",
-      "dateInvalid": "This date is not valid. The date format is {format}",
-      "dateInvalidSeparate": "This date is not valid. Enter a valid {element}.",
-      "ageVerificationError": "You must be older than {minAge} years old to submit this form.",
-      "multipleFileUploads_typeError": "{file} has invalid extension. Only {extensions} are allowed.",
-      "multipleFileUploads_sizeError": "{file} is too large, maximum file size is {sizeLimit}.",
-      "multipleFileUploads_minSizeError": "{file} is too small, minimum file size is {minSizeLimit}.",
-      "multipleFileUploads_emptyError": "{file} is empty, please select files again without it.",
-      "multipleFileUploads_uploadFailed": "File upload failed, please remove it and upload the file again.",
-      "multipleFileUploads_onLeave": "The files are being uploaded, if you leave now the upload will be cancelled.",
-      "multipleFileUploads_fileLimitError": "Only {fileLimit} file uploads allowed.",
-      "dragAndDropFilesHere_infoMessage": "Drag and drop files here",
-      "chooseAFile_infoMessage": "Choose a file",
-      "maxFileSize_infoMessage": "Max. file size",
-      "generalError": "There are errors on the form. Please fix them before continuing.",
-      "generalPageError": "There are errors on this page. Please fix them before continuing.",
-      "wordLimitError": "Too many words. The limit is",
-      "wordMinLimitError": "Too few words.  The minimum is",
-      "characterLimitError": "Too many Characters.  The limit is",
-      "characterMinLimitError": "Too few characters. The minimum is",
-      "ccInvalidNumber": "Credit Card Number is invalid.",
-      "ccInvalidCVC": "CVC number is invalid.",
-      "ccInvalidExpireDate": "Expire date is invalid.",
-      "ccInvalidExpireMonth": "Expiration month is invalid.",
-      "ccInvalidExpireYear": "Expiration year is invalid.",
-      "ccMissingDetails": "Please fill up the credit card details.",
-      "ccMissingProduct": "Please select at least one product.",
-      "ccMissingDonation": "Please enter numeric values for donation amount.",
-      "disallowDecimals": "Please enter a whole number.",
-      "restrictedDomain": "This domain is not allowed",
-      "ccDonationMinLimitError": "Minimum amount is {minAmount} {currency}",
-      "requiredLegend": "All fields marked with * are required and must be filled.",
-      "geoPermissionTitle": "Permission Denied",
-      "geoPermissionDesc": "Check your browser's privacy settings.",
-      "geoNotAvailableTitle": "Position Unavailable",
-      "geoNotAvailableDesc": "Location provider not available. Please enter the address manually.",
-      "geoTimeoutTitle": "Timeout",
-      "geoTimeoutDesc": "Please check your internet connection and try again.",
-      "selectedTime": "Selected Time",
-      "formerSelectedTime": "Former Time",
-      "cancelAppointment": "Cancel Appointment",
-      "cancelSelection": "Cancel Selection",
-      "noSlotsAvailable": "No slots available",
-      "slotUnavailable": "{time} on {date} has been selected is unavailable. Please select another slot.",
-      "multipleError": "There are {count} errors on this page. Please correct them before moving on.",
-      "oneError": "There is {count} error on this page. Please correct it before moving on.",
-      "doneMessage": "Well done! All errors are fixed.",
-      "invalidTime": "Enter a valid time",
-      "doneButton": "Done",
-      "reviewSubmitText": "Review and Submit",
-      "nextButtonText": "Next",
-      "prevButtonText": "Previous",
-      "seeErrorsButton": "See Errors",
-      "notEnoughStock": "Not enough stock for the current selection",
-      "notEnoughStock_remainedItems": "Not enough stock for the current selection ({count} items left)",
-      "soldOut": "Sold Out",
-      "justSoldOut": "Just Sold Out",
-      "selectionSoldOut": "Selection Sold Out",
-      "subProductItemsLeft": "({count} items left)",
-      "startButtonText": "START",
-      "submitButtonText": "Submit",
-      "submissionLimit": "Sorry! Only one entry is allowed. <br> Multiple submissions are disabled for this form.",
-      "reviewBackText": "Back to Form",
-      "seeAllText": "See All",
-      "progressMiddleText": "of",
-      "fieldError": "field has an error.",
-      "error": "Error"
-    };
     JotForm.newPaymentUI = true;
     JotForm.useJotformSign = "Yes";
-    JotForm.originalLanguage = "tr";
-    JotForm.replaceTagTest = true;
-    JotForm.uploadServerURL = "https://upload.jotform.com/upload";
-    JotForm.clearFieldOnHide = "disable";
-    JotForm.submitError = "jumpToFirstError";
-    window.addEventListener('DOMContentLoaded', function () {
-      window.brandingFooter.init({ "formID": 242692850322961, "campaign": "powered_by_jotform_le", "isCardForm": false, "isLegacyForm": false, "formLanguage": "tr" })
-    });
+    JotForm.originalLanguage = "en";
     JotForm.isFullSource = true;
-
     JotForm.init(function () {
-      /*INIT-START*/
-
+      /* Initialization code */
       JotForm.calendarMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      if (!JotForm.calenderViewMonths) JotForm.calenderViewMonths = {}; JotForm.calenderViewMonths[3] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      if (!JotForm.calenderViewDays) JotForm.calenderViewDays = {}; JotForm.calenderViewDays[3] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
       JotForm.calendarDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-      JotForm.calendarOther = { "today": "Today" };
-      var languageOptions = document.querySelectorAll('#langList li');
-      for (var langIndex = 0; langIndex < languageOptions.length; langIndex++) {
-        languageOptions[langIndex].on('click', function (e) { setTimeout(function () { JotForm.setCalendar("3", false, { "days": { "monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": true, "sunday": true }, "future": true, "past": true, "custom": false, "ranges": false, "start": "", "end": "", "countSelectedDaysOnly": false }); }, 0); });
-      }
-      JotForm.onTranslationsFetch(function () { JotForm.setCalendar("3", false, { "days": { "monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": true, "sunday": true }, "future": true, "past": true, "custom": false, "ranges": false, "start": "", "end": "", "countSelectedDaysOnly": false }); });
-      JotForm.formatDate({ date: (new Date()), dateField: $("id_" + 3) });
-      JotForm.alterTexts({ "ageVerificationError": "Bu formu göndermek için {minAge} yaşından büyük olmanız gerekiyor.", "alphabetic": "Bu alan yalnızca harf kullanılarak doldurulabilir", /* ... other translations ... */ });
-      /*INIT-END*/
+      JotForm.setCalendar("3", false, {
+        "days": {
+          "monday": true,
+          "tuesday": true,
+          "wednesday": true,
+          "thursday": true,
+          "friday": true,
+          "saturday": true,
+          "sunday": true
+        },
+        "future": true,
+        "past": true,
+        "custom": false,
+        "ranges": false,
+        "start": "",
+        "end": "",
+        "countSelectedDaysOnly": false
+      });
     });
-
-    setTimeout(function () {
-      JotForm.paymentExtrasOnTheFly([null, { "name": "unitInventory", "qid": "1", "text": "Unit Inventory", "type": "control_head" }, { "name": "submit2", "qid": "2", "text": "Submit", "type": "control_button" }, { "description": "", "name": "date", "qid": "3", "text": "Date", "type": "control_datetime" }, null, { "description": "", "name": "city", "qid": "5", "subLabel": "", "text": "City", "type": "control_dropdown" }, { "description": "", "name": "inventoryAudit", "qid": "6", "text": "Inventory Audit", "type": "control_matrix" }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { "description": "", "name": "typeA21", "qid": "21", "subLabel": "", "text": "Medic", "type": "control_dropdown" }, { "description": "", "name": "signature", "qid": "22", "subLabel": "", "text": "Signature", "type": "control_signature" }]);
-    }, 20);
   </script>
   <!-- Your JotForm Form Starts Here -->
   <form action="https://submit.jotform.com/submit/242692850322961" method="post" name="form_242692850322961" id="242692850322961" accept-charset="utf-8" autocomplete="on">
-   
-  <form class="jotform-form" action="https://submit.jotform.com/submit/242692850322961" method="post" name="form_242692850322961" id="242692850322961" accept-charset="utf-8" autocomplete="on">
+    <!-- Hidden Inputs -->
     <input type="hidden" name="formID" value="242692850322961" />
     <input type="hidden" id="JWTContainer" value="" />
     <input type="hidden" id="cardinalOrderNumber" value="" />
@@ -306,8 +123,11 @@
     <input type="hidden" name="website" value="" />
     <input type="hidden" name="simple_spc" id="simple_spc" value="242692850322961-242692850322961" />
     <input type="hidden" name="uploadServerUrl" value="https://upload.jotform.com/upload" />
+
+    <!-- Form Content -->
     <div role="main" class="form-all">
       <ul class="form-section page-section">
+
         <!-- Header -->
         <li id="cid_1" class="form-input-wide" data-type="control_head">
           <div class="form-header-group header-large">
@@ -323,25 +143,27 @@
           <div id="cid_3" class="form-input-wide jf-required" data-layout="half">
             <!-- Date Picker -->
             <div data-wrapper-react="true">
+              <!-- Hidden date inputs for non-lite mode -->
               <div style="display:none">
                 <span class="form-sub-label-container" style="vertical-align:top">
-                  <input type="tel" class="form-textbox validate[required, limitDate]" id="month_3" name="q3_date[month]" size="2" data-maxlength="2" data-age="" maxLength="2" required="" autoComplete="off" aria-labelledby="label_3 sublabel_3_month" />
+                  <input type="tel" class="form-textbox validate[required, limitDate]" id="month_3" name="q3_date[month]" size="2" data-maxlength="2" data-age="" maxlength="2" required="" autocomplete="off" aria-labelledby="label_3 sublabel_3_month" />
                   <span class="date-separate" aria-hidden="true"> -</span>
                   <label class="form-sub-label" for="month_3" id="sublabel_3_month" style="min-height:13px">Month</label>
                 </span>
                 <span class="form-sub-label-container" style="vertical-align:top">
-                  <input type="tel" class="currentDate form-textbox validate[required, limitDate]" id="day_3" name="q3_date[day]" size="2" data-maxlength="2" data-age="" maxLength="2" required="" autoComplete="off" aria-labelledby="label_3 sublabel_3_day" />
+                  <input type="tel" class="currentDate form-textbox validate[required, limitDate]" id="day_3" name="q3_date[day]" size="2" data-maxlength="2" data-age="" maxlength="2" required="" autocomplete="off" aria-labelledby="label_3 sublabel_3_day" />
                   <span class="date-separate" aria-hidden="true"> -</span>
                   <label class="form-sub-label" for="day_3" id="sublabel_3_day" style="min-height:13px">Day</label>
                 </span>
                 <span class="form-sub-label-container" style="vertical-align:top">
-                  <input type="tel" class="form-textbox validate[required, limitDate]" id="year_3" name="q3_date[year]" size="4" data-maxlength="4" data-age="" maxLength="4" required="" autoComplete="off" aria-labelledby="label_3 sublabel_3_year" />
+                  <input type="tel" class="form-textbox validate[required, limitDate]" id="year_3" name="q3_date[year]" size="4" data-maxlength="4" data-age="" maxlength="4" required="" autocomplete="off" aria-labelledby="label_3 sublabel_3_year" />
                   <label class="form-sub-label" for="year_3" id="sublabel_3_year" style="min-height:13px">Year</label>
                 </span>
               </div>
+              <!-- Lite mode date picker -->
               <span class="form-sub-label-container" style="vertical-align:top">
-                <input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_3" size="12" data-maxlength="12" maxLength="12" data-age="" required="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_3 sublabel_3_litemode" />
-                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Select Date" id="input_3_pick" src="https://cdn.jotform.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                <input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_3" name="q3_date" size="12" data-maxlength="12" maxlength="12" data-age="" required="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autocomplete="off" aria-labelledby="label_3 sublabel_3_litemode" />
+                <img class="newDefaultTheme-dateIcon icon-liteMode" alt="Select Date" id="input_3_pick" src="https://cdn.jotform.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
                 <label class="form-sub-label" for="lite_mode_3" id="sublabel_3_litemode" style="min-height:13px">Date</label>
               </span>
             </div>
@@ -381,10 +203,10 @@
                   <label for="input_6_0_1">InStock-Operational Screens</label>
                 </th>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_0_0" name="q6_inventoryAudit[0][]" readonly />
+                  <input type="number" id="input_6_0_0" name="q6_inventoryAudit[0][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_0_1" name="q6_inventoryAudit[0][]" />
+                  <input type="number" id="input_6_0_1" name="q6_inventoryAudit[0][1]" />
                 </td>
               </tr>
               <!-- Row 2 -->
@@ -393,10 +215,10 @@
                   <label for="input_6_1_1">InStock-Non Operational Repairable</label>
                 </th>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_1_0" name="q6_inventoryAudit[1][]" readonly />
+                  <input type="number" id="input_6_1_0" name="q6_inventoryAudit[1][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_1_1" name="q6_inventoryAudit[1][]" />
+                  <input type="number" id="input_6_1_1" name="q6_inventoryAudit[1][1]" />
                 </td>
               </tr>
               <!-- Row 3 -->
@@ -405,10 +227,10 @@
                   <label for="input_6_2_1">InStock-Permanently Non Op</label>
                 </th>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_2_0" name="q6_inventoryAudit[2][]" readonly />
+                  <input type="number" id="input_6_2_0" name="q6_inventoryAudit[2][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_2_1" name="q6_inventoryAudit[2][]" />
+                  <input type="number" id="input_6_2_1" name="q6_inventoryAudit[2][1]" />
                 </td>
               </tr>
               <!-- Row 4 -->
@@ -417,10 +239,10 @@
                   <label for="input_6_3_1">LED Panels</label>
                 </th>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_3_0" name="q6_inventoryAudit[3][]" readonly />
+                  <input type="number" id="input_6_3_0" name="q6_inventoryAudit[3][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_3_1" name="q6_inventoryAudit[3][]" />
+                  <input type="number" id="input_6_3_1" name="q6_inventoryAudit[3][1]" />
                 </td>
               </tr>
               <!-- Row 5 -->
@@ -429,10 +251,10 @@
                   <label for="input_6_4_1">E62 NA Boards</label>
                 </th>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_4_0" name="q6_inventoryAudit[4][]" readonly />
+                  <input type="number" id="input_6_4_0" name="q6_inventoryAudit[4][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_4_1" name="q6_inventoryAudit[4][]" />
+                  <input type="number" id="input_6_4_1" name="q6_inventoryAudit[4][1]" />
                 </td>
               </tr>
               <!-- Row 6 -->
@@ -441,10 +263,10 @@
                   <label for="input_6_5_1">E62 EU Boards</label>
                 </th>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_5_0" name="q6_inventoryAudit[5][]" readonly />
+                  <input type="number" id="input_6_5_0" name="q6_inventoryAudit[5][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_5_1" name="q6_inventoryAudit[5][]" />
+                  <input type="number" id="input_6_5_1" name="q6_inventoryAudit[5][1]" />
                 </td>
               </tr>
               <!-- Row 7 -->
@@ -453,10 +275,10 @@
                   <label for="input_6_6_1">L20 Boards</label>
                 </th>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_6_0" name="q6_inventoryAudit[6][]" readonly />
+                  <input type="number" id="input_6_6_0" name="q6_inventoryAudit[6][0]" readonly />
                 </td>
                 <td class="form-matrix-values">
-                  <input type="number" id="input_6_6_1" name="q6_inventoryAudit[6][]" />
+                  <input type="number" id="input_6_6_1" name="q6_inventoryAudit[6][1]" />
                 </td>
               </tr>
             </table>
@@ -471,8 +293,10 @@
             </div>
           </div>
         </li>
+
       </ul>
     </div>
+
     <!-- JavaScript to fetch and populate data -->
     <script>
       // Callback function must be in global scope
@@ -491,10 +315,10 @@
         }
       }
 
-      document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('DOMContentLoaded', function() {
         var citySelect = document.querySelector('#input_5');
 
-        citySelect.addEventListener('change', function () {
+        citySelect.addEventListener('change', function() {
           var selectedCity = citySelect.value;
           if (selectedCity) {
             fetchData(selectedCity);
