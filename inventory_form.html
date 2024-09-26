@@ -343,6 +343,17 @@
           }
         });
 
+        // Fix for JotForm date validation
+        document.getElementById('lite_mode_3').addEventListener('blur', function() {
+          var dateValue = this.value;
+          var dateParts = dateValue.split('-');
+          if (dateParts.length === 3) {
+            document.getElementById('month_3').value = dateParts[0];
+            document.getElementById('day_3').value = dateParts[1];
+            document.getElementById('year_3').value = dateParts[2];
+          }
+        });
+
       });
     </script>
   </form>
